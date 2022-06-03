@@ -11,8 +11,6 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
-      - run: npm ci
-      - run: npm test
       - uses: aws-actions/setup-sam@v1
       - uses: aws-actions/configure-aws-credentials@v1
         with:
