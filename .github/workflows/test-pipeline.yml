@@ -1,8 +1,8 @@
-name: first deployment
+name: TEST ENV
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
