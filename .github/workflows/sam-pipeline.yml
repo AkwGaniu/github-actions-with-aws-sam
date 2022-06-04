@@ -1,3 +1,4 @@
+name: first deployment
 on:
   push:
     branches:
