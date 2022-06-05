@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # Customize those three lines with your repository and credentials:
-REPO=https://api.github.com/repos/${secrets.REPOSITORY_NAME}
-GITHUB_USER=${secrets.USER_NAME%%/*}
-GITHUB_TOKEN=${secrets.REPO_ACCESS_TOKEN}
+USER_NAME=akwganiu
+REPO=https://api.github.com/repos/github-actions-with-aws-sam
+GITHUB_USER=${USER_NAME%%/*}
+GITHUB_TOKEN=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
 
 # Number of most recent versions to keep for each artifact:
 KEEP=4
