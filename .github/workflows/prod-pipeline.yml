@@ -18,6 +18,20 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
+
+      # validate template
+      - run: sam validate --template template.prod.yml
+
+      # free disk space
+      - run: sudo swapoff -a
+      - run: sudo rm -f /swapfile
+      - run: sudo apt clean
+      - run: docker rmi $(docker image ls -aq)
+      - run: df -h
+      
+      # cleanup old action artifacts
+      - run: .github/workflows/purge_artifacts.sh ${{ secrets.REPO_ACCESS_TOKEN }}
+  
       # sam build 
       - run: sam build --use-container
 
