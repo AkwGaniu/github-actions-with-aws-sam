@@ -35,7 +35,7 @@ Parameters:
     Default: "AkwGaniu"
   MainGitBranch:
     Type: String
-    Default: "/"
+    Default: "master"
   SamTemplate:
     Type: String
     Default: "template.yaml"
